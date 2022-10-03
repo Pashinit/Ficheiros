@@ -27,7 +27,7 @@ public class Ficheiros {
                 case 4: Ficheiro.escreveFicheiroNovo();break;
                 case 5: Ficheiro.mostraConteudoFicheiro();break;
                 case 6: Ficheiro.mostraListaFicheiros();break;
-                case 0: Ficheiro.criarFicheiro();break;
+                case 0: break;
             }
         }while(op!=0);
         

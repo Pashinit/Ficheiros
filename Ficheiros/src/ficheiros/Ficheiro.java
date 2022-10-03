@@ -24,6 +24,17 @@ class Ficheiro {
     }
 
     static void verificaSeExiste() {
+        String nome;
+        System.out.println("Insira o nome do ficheiro a verificar");
+        nome = Ficheiros.read.nextLine();
+        nome = Ficheiros.read.next();
+        
+        File ficheiro = new File (nome);
+        if(!ficheiro.exists()){
+            System.out.println("O ficheiro não existe");
+        }else{
+            System.out.println("O ficheiro existe");
+        }
     }
 
     static void escreveNoFinalFicheiro() {
