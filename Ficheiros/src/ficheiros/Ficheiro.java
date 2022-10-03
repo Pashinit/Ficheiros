@@ -2,11 +2,25 @@
 package ficheiros;
 
 import java.io.File;
+import java.io.IOException;
 
 
 class Ficheiro {
 
     static void criarFicheiro() {
+        String nome;
+        System.out.println("Insira o nome do ficheiro a criar");
+        nome = Ficheiros.read.nextLine();
+        nome = Ficheiros.read.next();
+        
+        File ficheiro = new File (nome);
+        if(!ficheiro.exists()){
+            try {
+                ficheiro.createNewFile();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     static void verificaSeExiste() {
