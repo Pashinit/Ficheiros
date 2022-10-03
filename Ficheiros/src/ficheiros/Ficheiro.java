@@ -1,7 +1,9 @@
 
 package ficheiros;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -38,6 +40,30 @@ class Ficheiro {
     }
 
     static void escreveNoFinalFicheiro() {
+        String nome;
+        System.out.println("Insira o nome do ficheiro onde vai escrever");
+        nome = Ficheiros.read.nextLine();
+        nome = Ficheiros.read.next();
+        
+        File ficheiro = new File (nome);
+        
+            try {
+                if(!ficheiro.exists()){
+                    ficheiro.createNewFile();
+                }
+                FileWriter fw = new FileWriter(ficheiro,true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                String texto;
+                System.out.println("Insira o conteudo");
+                texto = Ficheiros.read.nextLine();
+                texto = Ficheiros.read.nextLine();
+                bw.write(texto);
+                bw.newLine();
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
     }
 
     static void escreveFicheiroNovo() {
